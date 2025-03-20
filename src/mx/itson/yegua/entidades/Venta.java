@@ -104,29 +104,39 @@ public class Venta {
     private double total;
     private List<Articulo> articulos;
     
+   /**El metodo va a agregarle al subtotal los precios si cpoincide con los tipos de articulos
+    * 
+    */
    
     public void calcularSubtotal() {
       double s=0;
+        
         for(Articulo a :articulos){
             if(a.getCategoria()== Categoria.ROPA ){
-              a+=a.getPrecio();
+                if(TipoVenta.CREDITO==a.getCategoria()){
+              s+=a.getPrecio();  }
+               
             }if(a.getCategoria()== Categoria.ALIMENTOS ){
-            
+               s+=a.getPrecio();
             }if(a.getCategoria()== Categoria.ELECTRONICA ){
-            
+               s+=a.getPrecio();
             }if(a.getCategoria()== Categoria.LINEA_BLANCA){
-            
+                s+=a.getPrecio();
             }else{
             }
-                
+        
             
         }
     }
             
   public void calcularTotal(){
       
+      
   }  
     
     
+  
+    
+  
 }
 
